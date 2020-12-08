@@ -13,37 +13,42 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const environment = require('./configuration/environment');
 
-const templateFiles = fs.readdirSync(path.resolve(__dirname, environment.paths.source, 'templates'));
-const htmlPluginEntries = templateFiles.map((template) => new HTMLWebpackPlugin({
-  inject: true,
-  hash: false,
-  filename: template,
-  template: path.resolve(environment.paths.source, 'templates', template),
-  favicon: path.resolve(environment.paths.source, 'images', 'favicon.ico'),
-}));
+const templateFiles = fs.readdirSync(
+  path.resolve(__dirname, environment.paths.source, 'templates')
+);
+const htmlPluginEntries = templateFiles.map(
+  (template) =>
+    new HTMLWebpackPlugin({
+      inject: true,
+      hash: false,
+      filename: template,
+      template: path.resolve(environment.paths.source, 'templates', template),
+      favicon: path.resolve(environment.paths.source, 'images', 'favicon.ico')
+    })
+);
 
 module.exports = {
   entry: {
-    app: path.resolve(environment.paths.source, 'js', 'app.js'),
+    app: path.resolve(environment.paths.source, 'js', 'app.js')
   },
   output: {
     filename: 'js/[name].js',
-    path: environment.paths.output,
+    path: environment.paths.output
   },
   module: {
     rules: [
       {
         test: /\.((c|sa|sc)ss)$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ['babel-loader']
       },
       {
         test: /\.html$/i,
-        loader: 'html-loader',
+        loader: 'html-loader'
       },
       {
         test: /\.(png|gif|jpe?g|svg)$/i,
@@ -53,10 +58,10 @@ module.exports = {
             options: {
               name: 'images/design/[name].[hash:6].[ext]',
               publicPath: '../',
-              limit: environment.limits.images,
-            },
-          },
-        ],
+              limit: environment.limits.images
+            }
+          }
+        ]
       },
       // { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
       {
@@ -67,22 +72,22 @@ module.exports = {
             options: {
               name: 'fonts/[name].[hash:6].[ext]',
               publicPath: '../',
-              limit: environment.limits.fonts,
-            },
-          },
-        ],
-      },
-    ],
+              limit: environment.limits.fonts
+            }
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
-      'window.$': 'jquery',
+      'window.$': 'jquery'
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
+      filename: 'css/[name].css'
     }),
     new ImageMinimizerPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
@@ -98,16 +103,16 @@ module.exports = {
             {
               plugins: [
                 {
-                  removeViewBox: false,
-                },
-              ],
-            },
-          ],
-        ],
-      },
+                  removeViewBox: false
+                }
+              ]
+            }
+          ]
+        ]
+      }
     }),
     new CleanWebpackPlugin({
-      verbose: true,
+      verbose: true
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -116,11 +121,11 @@ module.exports = {
           to: path.resolve(environment.paths.output, 'images', 'content'),
           toType: 'dir',
           globOptions: {
-            ignore: ['*.DS_Store', 'Thumbs.db'],
-          },
-        },
-      ],
-    }),
+            ignore: ['*.DS_Store', 'Thumbs.db']
+          }
+        }
+      ]
+    })
   ].concat(htmlPluginEntries),
-  target: 'web',
+  target: 'web'
 };
