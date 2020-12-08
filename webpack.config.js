@@ -4,6 +4,7 @@
 
 const path = require('path');
 const fs = require('fs');
+const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
@@ -41,6 +42,10 @@ module.exports = {
         use: ['babel-loader'],
       },
       {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
+      {
         test: /\.(png|gif|jpe?g|svg)$/i,
         use: [
           {
@@ -53,6 +58,7 @@ module.exports = {
           },
         ],
       },
+      // { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         use: [
@@ -69,6 +75,12 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      'window.$': 'jquery',
+    }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
     }),

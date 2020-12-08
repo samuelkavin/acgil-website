@@ -1,33 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Athlon / Front-end Webpack Template</title>
-  </head>
-  <body>
-    <header>
-      <h1>
-        <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/" target="_blank">Webpack 5 Template Boilerplate</a>
-      </h1>
 
-      <img src="images/content/logoa.svg" alt="Logo of Athlon" class="logo"> 
-      
-      <section class="badges">
-        <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/" target="_blank"><img src="https://img.shields.io/maintenance/yes/2020?logo=github" alt="Maintenance"></a>
-        <a href="https://webpack.js.org" target="_blank"><img src="https://img.shields.io/badge/webpack-v5.9.0-green?logo=webpack" alt="Current Webpack Version"></a>
-        <a href="https://travis-ci.org/weareathlon/frontend-webpack-boilerplate" target="_blank"><img src="https://api.travis-ci.org/weareathlon/frontend-webpack-boilerplate.svg?branch=master" alt="Build Status"></a>
-        <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/issues" target="_blank"><img src="https://img.shields.io/github/issues-raw/WeAreAthlon/frontend-webpack-boilerplate" alt="GitHub Issues"></a>
-        <a href="https://snyk.io/test/github/WeAreAthlon/frontend-webpack-boilerplate?targetFile=package.json" target="_blank"><img src="https://snyk.io/test/github/WeAreAthlon/frontend-webpack-boilerplate/badge.svg?targetFile=package.json" alt="Known Vulnerabilities"></a>
-        <a href="https://david-dm.org/WeAreAthlon/frontend-webpack-boilerplate?type=dev" target="_blank"><img src="https://david-dm.org/WeAreAthlon/frontend-webpack-boilerplate/dev-status.svg" alt="devDependency Status"></a>
-        <a href="https://www.npmjs.com/package/@weareathlon/frontend-webpack-boilerplate" target="_blank"><img src="https://img.shields.io/npm/dm/@weareathlon/frontend-webpack-boilerplate" alt="npm"></a>
-        <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/blob/master/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/WeAreAthlon/frontend-webpack-boilerplate" alt="GitHub License"></a></p> 
-      </section>  
-    </header>
-    <main>
-      <p>Demo page illustrating building <strong>SASS</strong>, PostCSS, JavaScript, Fonts, Background Images and Inline Images.</p>
-     
-      <address>Documentation avaialable on the official <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/" target="_blank">GitHub Repository</a>.</address>
-      <address>Maintained by <a href="https://www.weareathlon.com/" target="_blank">WeAreAthlon</a>.</address>
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Athlon / Front-end Webpack Template</title>
+</head>
+
+<body>
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+    <div class="container d-flex">
+      <div class="contact-info mr-auto">
+        <i class="icofont-envelope"></i> <a
+          href="mailto:contact@example.com">contact@example.com</a>
+        <i class="icofont-phone"></i> +1 5589 55488 55
+      </div>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="#" class="skype"><i class="icofont-skype"></i></a>
+        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="index.html"><img src="./../assets/img/acgil-logo.png"
+            alt="acgil-logo"></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <!-- <li><a href="#about">About</a></li> -->
+          <li><a href="#services">Services</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1>Welcome to <span>acgil</spa>
+      </h1>
+      <h2>Your Digital Solutions Partner</h2>
+      <div class="d-flex">
+        <a href="#contact" class="btn-get-started scrollto">Get Started</a>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+      <div class="container">
+
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4 class="title"><a href="">Impact Consulting</a></h4>
+              <p class="description">A key success factor in understanding impact is to reduce the
+                time it takes to achieve value.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="">Project consultancy</a></h4>
+              <p class="description">Having worked on various projects, with companies of all sizes
+                ACGIL has the knowledge and
+                experience to provide full project consultancy</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4 class="title"><a href="">IT consultancy</a></h4>
+              <p class="description">In some cases, digitalization are far more valuable
+                if they are integrated externally - ACGIL has the team and
+                the experience to deliver
+              </p>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </section><!-- End Featured Services Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="departments section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <h3>A new way to engage with customersfrom across the globe.</h3>
+          <p>
+            We know customers knows their business, but they need to make strategic business
+            decisions.
+            We help decision making by providing the analytical tools and the information will be
+            at your fingertips real-time.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-toggle="tab" href="#tab-1">
+                  <h4>Custom Development</h4>
+                  <p>Responsive, scalable, and on-demand delivery of enterprise level applications
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-toggle="tab" href="#tab-2">
+                  <h4>ERP Solutions</h4>
+                  <p>Lean and controlled ERP modules (Manufacturing and FMCG focus)</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-toggle="tab" href="#tab-3">
+                  <h4>Business Digitalization</h4>
+                  <p>Unified Communication, Collaboration and Management</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-8">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row box-content">
+                  <div class="col-3 custom-box">
+                    <i class='bx bx-receipt'></i>
+                    <p>Billing & Payment Platform</p>
+                  </div>
+                  <div class="col-3 custom-box">
+                    <i class='bx bxs-megaphone'></i>
+                    <p>CCM</p>
+                  </div>
+                  <div class="col-3 custom-box">
+                    <i class='bx bx-slideshow'></i>
+                    <p>Business Application Development</p>
+                  </div>
+                  <div class="col-3 custom-box">
+                    <i class='bx bx-terminal'></i>
+                    <p>Full Stack Web Development</p>
+                  </div>
+                  <div class="col-3 custom-box">
+                    <i class='bx bxl-whatsapp'></i>
+                    <p>Mobile App Development</p>
+                  </div>
+                  <div class="col-3 custom-box">
+                    <i class='bx bx-data'></i>
+                    <p>Big Data & BIS Development</p>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row box-content">
+                  <div class="col-3 custom-box">
+                    <i class='bx bx-layer-plus'></i>
+                    <p>Quality Management</p>
+                  </div>
+                  <div class="col-3 custom-box">
+                    <i class='bx bx-like'></i>
+                    <p>Dealer Management</p>
+                  </div>
+                  <div class="col-3 custom-box">
+                    <i class='bx bx-server'></i>
+                    <p>Production</p>
+                  </div>
+                  <div class="col-3 custom-box">
+                    <i class='bx bx-world'></i>
+                    <p>Project Management</p>
+                  </div>
+                  <div class="col-3 custom-box">
+                    <i class='bx bx-transfer'></i>
+                    <p>Supply Chain Management</p>
+                  </div>
+                  <div class="col-3 custom-box">
+                    <i class='bx bx-dollar'></i>
+                    <p>Finance & Accounting</p>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-12 order-2 order-lg-1">
+                      <div class="icon-box mt-5 mt-lg-0">
+                        <i class="bx bx-receipt"></i>
+                        <h4>Project consultancy</h4>
+                        <p>Having worked on various projects, with companies of all sizes (from
+                          startups to huge multinational corporations), ACGIL has the knowledge and
+                          experience to provide full project consultancy from the moment the product
+                          contract is signed all the way to the moment the platform goes live. Our
+                          expertise can handle both B2B and B2C cases, as we have worked extensively
+                          with both
+                        </p>
+                      </div>
+                      <div class="icon-box mt-5 mt-lg-0">
+                        <i class="bx bx-receipt"></i>
+                        <h4>IT consultancy</h4>
+                        <p>In some cases, digitalization platforms are far more valuable if they are
+                          integrated within the platforms of our clients. Whenever such a need
+                          arises, ACGIL has the team and the experience to help our partners achieve
+                          their desired outcome in integrating the digitalization platforms in their
+                          own or new tools/systems
+                        </p>
+                      </div>
+                      <div class="icon-box mt-5 mt-lg-0">
+                        <i class="bx bx-receipt"></i>
+                        <h4>Impact consultancy</h4>
+                        <p>Looking to quantify the impact of your digitalization projects? ACGIL can
+                          provide impact consultancy, highlighting the numbers with a detailed
+                          analysis with reports that show the exact results of your digitalization
+                          projects. The analysis can be either a pre-project analysis or a
+                          post-project analysis, creating either a forecast or an impact analysis.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Departments Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Team</h2>
+          <h3>Lead <span>Consultants</span></h3>
+          <p>Led by experienced Consultants with more than 45 years of experience within the digital
+            business improvement space. The Principal Consultants are experts in Digital
+            Transformation and are certified by accredited organizations (SAP/IBMI/CIMA).
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="./../assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="icofont-twitter"></i></a>
+                  <a href=""><i class="icofont-facebook"></i></a>
+                  <a href=""><i class="icofont-instagram"></i></a>
+                  <a href=""><i class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Thava</h4>
+                <span>Company Principal</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="./../assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="icofont-twitter"></i></a>
+                  <a href=""><i class="icofont-facebook"></i></a>
+                  <a href=""><i class="icofont-instagram"></i></a>
+                  <a href=""><i class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Prem</h4>
+                <span>Company Principal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Team Section -->
+
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <h3><span>Contact Us</span></h3>
+          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at
+            voluptas atque vitae autem.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="info-box mb-4">
+              <i class="bx bx-map"></i>
+              <h3>Our Address</h3>
+              <p>A108 Adam Street, New York, NY 535022</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-box  mb-4">
+              <i class="bx bx-envelope"></i>
+              <h3>Email Us</h3>
+              <p>contact@example.com</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-box  mb-4">
+              <i class="bx bx-phone-call"></i>
+              <h3>Call Us</h3>
+              <p>+1 5589 55488 55</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6 ">
+            <iframe class="mb-4 mb-lg-0"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+              frameborder="0" style="border:0; width: 100%; height: 384px;"
+              allowfullscreen></iframe>
+          </div>
+
+          <div class="col-lg-6">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="form-row">
+                <div class="col form-group">
+                  <input type="text" name="name" class="form-control" id="name"
+                    placeholder="Your Name" data-rule="minlen:4"
+                    data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="col form-group">
+                  <input type="email" class="form-control" name="email" id="email"
+                    placeholder="Your Email" data-rule="email"
+                    data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject"
+                  placeholder="Subject" data-rule="minlen:4"
+                  data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required"
+                  data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Contact Section -->
+  </main>
+</body>
+
 </html>

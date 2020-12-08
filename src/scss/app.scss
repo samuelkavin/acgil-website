@@ -4,13 +4,10 @@
 @import 'base/vars';
 
 /* CSS Reset */
-@import 'base/reset';
+// @import 'base/reset';
 
 /* CSS print */
 @import 'base/print';
-
-/* Fonts */
-@import 'base/fonts';
 
 /* Mixins, helpers and functions */
 @import 'base/mixins';
@@ -19,8 +16,10 @@
 
 /* Components */
 
-/* Browser specific styles */
-@import 'dirty/hacks';
-
-/* Demo Page styles */
-@import 'demo';
+@import './../assets/vendor/bootstrap/css/bootstrap.min.css';
+@import './../assets/vendor/icofont/icofont.min.css';
+@import './../assets/vendor/boxicons/css/boxicons.min.css';
+@import './../assets/vendor/owl.carousel/assets/owl.carousel.min.css';
+@import './../assets/vendor/venobox/venobox.css';
+@import './../assets/vendor/aos/aos.css';
+@import './../assets/css/style.css';
