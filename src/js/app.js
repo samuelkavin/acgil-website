@@ -5,10 +5,12 @@ import '../assets/vendor/bootstrap/js/bootstrap.bundle.min.js';
 import '../assets/vendor/jquery.easing/jquery.easing.min.js';
 import '../assets/vendor/waypoints/jquery.waypoints.min.js';
 import '../assets/vendor/counterup/counterup.min.js';
-import '../assets/vendor/owl.carousel/owl.carousel.min.js';
 // import '../assets/vendor/isotope-layout/isotope.pkgd.min.js';
-import '../assets/vendor/venobox/venobox.min.js';
-import '../assets/vendor/aos/aos.js';
+import '../../node_modules/venobox/venobox/venobox.js';
+import '../../node_modules/aos/dist/aos.js';
+
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel';
 
 /* eslint wrap-iife: [1, "outside"] */
 (function () {
@@ -246,5 +248,9 @@ import '../assets/vendor/aos/aos.js';
   }
   $(window).on('load', function () {
     aosInit();
+  });
+
+  $(document).ready(function () {
+    $('.venobox').venobox();
   });
 })();
