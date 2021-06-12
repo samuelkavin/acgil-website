@@ -6,11 +6,50 @@ import '../assets/vendor/jquery.easing/jquery.easing.min.js';
 import '../assets/vendor/waypoints/jquery.waypoints.min.js';
 import '../assets/vendor/counterup/counterup.min.js';
 // import '../assets/vendor/isotope-layout/isotope.pkgd.min.js';
-import '../../node_modules/venobox/venobox/venobox.js';
+// import '../../node_modules/venobox/venobox/venobox.js';
 import '../../node_modules/aos/dist/aos.js';
 
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
+
+(function ($) {
+  'use strict';
+
+  var form = $('.php-email-form'),
+    message = $('.contact__msg'),
+    form_data;
+
+  // Success function
+  function done_func(response) {
+    message.fadeIn().removeClass('alert-danger').addClass('alert-success');
+    message.text(response);
+    setTimeout(function () {
+      message.fadeOut();
+    }, 2000);
+    form.find('input:not([type="submit"]), textarea').val('');
+  }
+
+  // fail function
+  function fail_func(data) {
+    message.fadeIn().removeClass('alert-success').addClass('alert-success');
+    message.text(data.responseText);
+    setTimeout(function () {
+      message.fadeOut();
+    }, 2000);
+  }
+
+  form.submit(function (e) {
+    e.preventDefault();
+    form_data = $(this).serialize();
+    $.ajax({
+      type: 'POST',
+      url: form.attr('action'),
+      data: form_data
+    })
+      .done(done_func)
+      .fail(fail_func);
+  });
+})(jQuery);
 
 /* eslint wrap-iife: [1, "outside"] */
 (function () {
@@ -210,26 +249,26 @@ import 'owl.carousel';
   });
 
   // Porfolio isotope and filter
-  $(window).on('load', function () {
-    var portfolioIsotope = $('.portfolio-container').isotope({
-      itemSelector: '.portfolio-item'
-    });
+  // $(window).on('load', function () {
+  //   var portfolioIsotope = $('.portfolio-container').isotope({
+  //     itemSelector: '.portfolio-item'
+  //   });
 
-    $('#portfolio-flters li').on('click', function () {
-      $('#portfolio-flters li').removeClass('filter-active');
-      $(this).addClass('filter-active');
+  //   $('#portfolio-flters li').on('click', function () {
+  //     $('#portfolio-flters li').removeClass('filter-active');
+  //     $(this).addClass('filter-active');
 
-      portfolioIsotope.isotope({
-        filter: $(this).data('filter')
-      });
-      aosInit();
-    });
+  //     portfolioIsotope.isotope({
+  //       filter: $(this).data('filter')
+  //     });
+  //     aosInit();
+  //   });
 
-    // Initiate venobox (lightbox feature used in portofilo)
-    $(document).ready(function () {
-      $('.venobox').venobox();
-    });
-  });
+  //   // Initiate venobox (lightbox feature used in portofilo)
+  //   // $(document).ready(function () {
+  //   //   $('.venobox').venobox();
+  //   // });
+  // });
 
   $('.portfolio-details-carousel').owlCarousel({
     autoplay: true,
@@ -239,18 +278,18 @@ import 'owl.carousel';
   });
 
   // Init AOS
-  function aosInit() {
-    // eslint-disable-next-line no-undef
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  }
-  $(window).on('load', function () {
-    aosInit();
-  });
+  // function aosInit() {
+  //   // eslint-disable-next-line no-undef
+  //   AOS.init({
+  //     duration: 1000,
+  //     once: true
+  //   });
+  // }
+  // $(window).on('load', function () {
+  //   aosInit();
+  // });
 
-  $(document).ready(function () {
-    $('.venobox').venobox();
-  });
+  // $(document).ready(function () {
+  //   $('.venobox').venobox();
+  // });
 })();
